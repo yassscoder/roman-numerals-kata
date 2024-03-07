@@ -1,24 +1,30 @@
+import java.util.Map;
+
 public class RomanNumerals {
+
     public static String convert(int arabicNumber) {
-        String romanNumeral = "";
-        if (arabicNumber == 9) {
-            return "IX";
+        Map<Integer, String> numbersDictionary = Map.ofEntries(
+                Map.entry(1, "I"),
+                Map.entry(4, "IV"),
+                Map.entry(5, "V"),
+                Map.entry(9, "IX")
+        );
+        if (numbersDictionary.containsKey(arabicNumber)) {
+            return numbersDictionary.get(arabicNumber);
         }
-        if (arabicNumber == 4) {
-            romanNumeral += "I";
-        }
-        if (arabicNumber < 4) {
+        StringBuilder romanNumeral = new StringBuilder();
+        if (arabicNumber < 5) {
             for (int i = 0; i < arabicNumber; i++) {
-                romanNumeral += "I";
+                romanNumeral.append(numbersDictionary.get(1));
             }
-            return romanNumeral;
+            return romanNumeral.toString();
         }
-        romanNumeral += "V";
+        romanNumeral.append("V");
         if (arabicNumber - 5 > 0) {
             for (int i = 0; i < arabicNumber - 5; i++) {
-                romanNumeral += "I";
+                romanNumeral.append(numbersDictionary.get(1));
             }
         }
-        return romanNumeral;
+        return romanNumeral.toString();
     }
 }
