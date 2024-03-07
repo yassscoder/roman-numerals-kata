@@ -4,8 +4,10 @@ public class RomanNumerals {
         if (arabicNumber == 5) {
             return "V";
         }
-        for (int i = 0; i < arabicNumber; i++) {
-            romanNumeral += "I";
+        if (arabicNumber < 5) {
+            for (int i = 0; i < arabicNumber; i++) {
+                romanNumeral += "I";
+            }
         }
         return romanNumeral;
     }
