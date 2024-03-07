@@ -9,4 +9,9 @@ public class RomanNumeralsShould {
     void return_I_if_number_1() {
         assertEquals("I", RomanNumerals.convert(1));
     }
+    @Test
+    @DisplayName("return II when arabic number is 2")
+    void return_II_if_number_2(){
+        assertEquals("II", RomanNumerals.convert(2));
+    }
 }
