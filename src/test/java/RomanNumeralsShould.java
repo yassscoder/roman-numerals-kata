@@ -16,4 +16,10 @@ public class RomanNumeralsShould {
     void return_roman(int arabicNumber, String romanNumeral) {
         assertEquals(romanNumeral, RomanNumerals.convert(arabicNumber));
     }
+
+    @Test
+    @DisplayName("return V when number is 5")
+    void return_V_if_number_5() {
+        assertEquals("V", RomanNumerals.convert(5));
+    }
 }
