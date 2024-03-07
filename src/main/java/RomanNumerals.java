@@ -17,10 +17,9 @@ public class RomanNumerals {
             for (int i = 0; i < arabicNumber; i++) {
                 romanNumeral.append(numbersDictionary.get(1));
             }
-            return romanNumeral.toString();
         }
-        romanNumeral.append("V");
         if (arabicNumber - 5 > 0) {
+            romanNumeral.append("V");
             for (int i = 0; i < arabicNumber - 5; i++) {
                 romanNumeral.append(numbersDictionary.get(1));
             }
