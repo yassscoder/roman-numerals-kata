@@ -2,9 +2,9 @@ public class RomanNumerals {
     public static String convert(int arabicNumber) {
         String romanNumeral = "";
         if (arabicNumber == 4) {
-            return "IV";
+            romanNumeral += "I";
         }
-        if (arabicNumber < 5) {
+        if (arabicNumber < 4) {
             for (int i = 0; i < arabicNumber; i++) {
                 romanNumeral += "I";
             }
