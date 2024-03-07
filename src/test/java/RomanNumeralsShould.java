@@ -40,4 +40,9 @@ public class RomanNumeralsShould {
     void return_iv_when_number_is_4() {
         assertEquals("IV", RomanNumerals.convert(4));
     }
+    @Test
+    @DisplayName("return IX when number is 9")
+    void return_ix_when_number_is_9() {
+        assertEquals("IX", RomanNumerals.convert(9));
+    }
 }
