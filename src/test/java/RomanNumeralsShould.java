@@ -22,4 +22,9 @@ public class RomanNumeralsShould {
     void return_V_if_number_5() {
         assertEquals("V", RomanNumerals.convert(5));
     }
+    @Test
+    @DisplayName("return VI when number is 6")
+    void return_V_if_number_6() {
+        assertEquals("VI", RomanNumerals.convert(6));
+    }
 }
