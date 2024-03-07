@@ -1,6 +1,9 @@
 public class RomanNumerals {
     public static String convert(int arabicNumber) {
         String romanNumeral = "";
+        if (arabicNumber == 9) {
+            return "IX";
+        }
         if (arabicNumber == 4) {
             romanNumeral += "I";
         }

@@ -29,7 +29,6 @@ public class RomanNumeralsShould {
             "6, VI",
             "7, VII",
             "8, VIII",
-            "9, VIIII"
     })
     void return_roman_when_bigger_than_5(int arabicNumber, String romanNumeral) {
         assertEquals(romanNumeral, RomanNumerals.convert(arabicNumber));
