@@ -1,22 +1,19 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RomanNumeralsShould {
-    @Test
-    @DisplayName("return I when arabic number is 1")
-    void return_I_if_number_1() {
-        assertEquals("I", RomanNumerals.convert(1));
-    }
-    @Test
-    @DisplayName("return II when arabic number is 2")
-    void return_II_if_number_2(){
-        assertEquals("II", RomanNumerals.convert(2));
-    }
-    @Test
-    @DisplayName("return III when arabic number is 3")
-    void return_III_if_number_3(){
-        assertEquals("III", RomanNumerals.convert(3));
+    @ParameterizedTest
+    @DisplayName("return roman numeral for 1-3")
+    @CsvSource({
+            "1, I",
+            "2, II",
+            "3, III"
+    })
+    void return_roman(int arabicNumber, String romanNumeral) {
+        assertEquals(romanNumeral, RomanNumerals.convert(arabicNumber));
     }
 }
