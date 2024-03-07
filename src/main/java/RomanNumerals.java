@@ -1,11 +1,9 @@
 public class RomanNumerals {
     public static String convert(int arabicNumber) {
-        if (arabicNumber == 2) {
-            return "II";
+        String romanNumeral = "";
+        for (int i = 0; i < arabicNumber; i++) {
+            romanNumeral += "I";
         }
-        if (arabicNumber == 3) {
-            return "III";
-        }
-        return "I";
+        return romanNumeral;
     }
 }
