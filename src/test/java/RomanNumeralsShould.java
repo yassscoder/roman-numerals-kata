@@ -12,7 +12,6 @@ public class RomanNumeralsShould {
             "1, I",
             "2, II",
             "3, III",
-            "4, IIII"
     })
     void return_roman(int arabicNumber, String romanNumeral) {
         assertEquals(romanNumeral, RomanNumerals.convert(arabicNumber));
@@ -23,6 +22,7 @@ public class RomanNumeralsShould {
     void return_V_if_number_5() {
         assertEquals("V", RomanNumerals.convert(5));
     }
+
     @ParameterizedTest
     @DisplayName("return roman numeral when number is bigger than 5")
     @CsvSource({
@@ -33,5 +33,11 @@ public class RomanNumeralsShould {
     })
     void return_roman_when_bigger_than_5(int arabicNumber, String romanNumeral) {
         assertEquals(romanNumeral, RomanNumerals.convert(arabicNumber));
+    }
+
+    @Test
+    @DisplayName("return IV when number is 4")
+    void return_iv_when_number_is_4() {
+        assertEquals("IV", RomanNumerals.convert(4));
     }
 }
