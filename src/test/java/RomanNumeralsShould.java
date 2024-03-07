@@ -14,4 +14,9 @@ public class RomanNumeralsShould {
     void return_II_if_number_2(){
         assertEquals("II", RomanNumerals.convert(2));
     }
+    @Test
+    @DisplayName("return III when arabic number is 3")
+    void return_III_if_number_3(){
+        assertEquals("III", RomanNumerals.convert(3));
+    }
 }
