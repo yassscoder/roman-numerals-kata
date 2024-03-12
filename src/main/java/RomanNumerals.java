@@ -1,6 +1,8 @@
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class RomanNumerals {
 
@@ -16,16 +18,13 @@ public class RomanNumerals {
             return numbersDictionary.get(arabicNumber);
         }
         StringBuilder romanNumeral = new StringBuilder();
-        if (arabicNumber < 5) {
-            for (int i = 0; i < arabicNumber; i++) {
-                romanNumeral.append(numbersDictionary.get(1));
-            }
-        }
-        if (arabicNumber - 5 > 0) {
+        int numberBuffer = arabicNumber;
+        if (arabicNumber >= 5) {
             romanNumeral.append("V");
-            for (int i = 0; i < arabicNumber - 5; i++) {
-                romanNumeral.append(numbersDictionary.get(1));
-            }
+            numberBuffer -= 5;
+        }
+        for (int i = 0; i < numberBuffer; i++) {
+            romanNumeral.append("I");
         }
         return romanNumeral.toString();
     }
