@@ -6,23 +6,22 @@ public class RomanNumerals {
 
     public static String convert(int arabicNumber) {
         SortedMap<Integer, String> numbersDictionary = new TreeMap<>(Map.ofEntries(
-                Map.entry(1, "I"),
-                Map.entry(4, "IV"),
-                Map.entry(5, "V"),
+                Map.entry(10, "X"),
                 Map.entry(9, "IX"),
-                Map.entry(10, "X")
-        ));
+                Map.entry(5, "V"),
+                Map.entry(4, "IV"),
+                Map.entry(1, "I")
+        )).descendingMap();
         if (numbersDictionary.containsKey(arabicNumber)) {
             return numbersDictionary.get(arabicNumber);
         }
         StringBuilder romanNumeral = new StringBuilder();
         int numberBuffer = arabicNumber;
-        if (arabicNumber >= 5) {
-            romanNumeral.append("V");
-            numberBuffer -= 5;
-        }
-        for (int i = 0; i < numberBuffer; i++) {
-            romanNumeral.append("I");
+        for (Integer key : numbersDictionary.keySet()) {
+            while (numberBuffer >= key) {
+                romanNumeral.append(numbersDictionary.get(key));
+                numberBuffer -= key;
+            }
         }
         return romanNumeral.toString();
     }
