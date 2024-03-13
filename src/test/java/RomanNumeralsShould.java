@@ -17,7 +17,7 @@ public class RomanNumeralsShould {
     }
 
     @ParameterizedTest
-    @DisplayName("return roman numeral for 4-9")
+    @DisplayName("return roman numeral for 4-39")
     @CsvSource({
             "4, IV",
             "5, V",
@@ -25,7 +25,11 @@ public class RomanNumeralsShould {
             "7, VII",
             "8, VIII",
             "9, IX",
-            "10, X"
+            "10, X",
+            "14, XIV",
+            "19, XIX",
+            "25, XXV",
+            "39, XXXIX"
     })
     void return_roman_when_bigger_than_3(int arabicNumber, String romanNumeral) {
         assertEquals(romanNumeral, RomanNumerals.convert(arabicNumber));
