@@ -24,7 +24,9 @@ public class RomanNumeralsShould {
             "25, XXV",
             "39, XXXIX",
             "40, XL",
-            "50, L"
+            "50, L",
+            "89, LXXXIX",
+            "90, XC"
     })
     void return_roman_when_bigger_than_3(int arabicNumber, String romanNumeral) {
         assertEquals(romanNumeral, RomanNumerals.convert(arabicNumber));
