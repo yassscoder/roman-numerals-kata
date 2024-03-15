@@ -11,8 +11,7 @@ public class RomanNumerals {
             Map.entry(10, "X"),
             Map.entry(40, "XL"),
             Map.entry(50, "L"),
-            Map.entry(90, "XC"),
-            Map.entry(100, "C")
+            Map.entry(90, "XC")
     )).descendingMap();
 
     public static String convert(int arabicNumber) {
