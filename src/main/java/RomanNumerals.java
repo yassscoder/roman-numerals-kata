@@ -3,20 +3,17 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class RomanNumerals {
+    private static final SortedMap<Integer, String> numbersDictionary = new TreeMap<>(Map.ofEntries(
+            Map.entry(1, "I"),
+            Map.entry(4, "IV"),
+            Map.entry(5, "V"),
+            Map.entry(9, "IX"),
+            Map.entry(10, "X"),
+            Map.entry(40, "XL"),
+            Map.entry(50, "L")
+    )).descendingMap();
 
     public static String convert(int arabicNumber) {
-        SortedMap<Integer, String> numbersDictionary = new TreeMap<>(Map.ofEntries(
-                Map.entry(1, "I"),
-                Map.entry(4, "IV"),
-                Map.entry(5, "V"),
-                Map.entry(9, "IX"),
-                Map.entry(10, "X"),
-                Map.entry(40, "XL"),
-                Map.entry(50, "L")
-        )).descendingMap();
-        if (numbersDictionary.containsKey(arabicNumber)) {
-            return numbersDictionary.get(arabicNumber);
-        }
         StringBuilder romanNumeral = new StringBuilder();
         int numberBuffer = arabicNumber;
         for (Integer key : numbersDictionary.keySet()) {
